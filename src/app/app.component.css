@@ -1,0 +1,8 @@
+.main-button{
+    font-size: large;
+    margin: 10px;
+}
+.notes{
+    display: flex;
+    flex-wrap: wrap;
+}

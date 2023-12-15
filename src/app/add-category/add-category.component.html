@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <p>New category name</p>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input matInput [(ngModel)]="data.category">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.category" cdkFocusInitial>Ok</button>
+  </div>

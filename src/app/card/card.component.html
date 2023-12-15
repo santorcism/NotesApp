@@ -1,0 +1,35 @@
+<mat-card [ngStyle]="{'background-color': color}">
+    <mat-card-header>
+        <button mat-icon-button color="white" aria-label="Edit the note icon" (click)="openDialog()">
+            <mat-icon>border_color</mat-icon>
+          </button>
+          <button mat-icon-button color="white" aria-label="Delete the note icon" (click)="delete()">
+            <mat-icon>delete</mat-icon>
+          </button>
+    </mat-card-header>
+    <mat-card-title>
+        
+        <div class="icons-container">
+            <div class="icons" *ngFor="let icon of icons">
+            <div *ngIf="isImageUrl(icon); else matIconTemplate">
+              <img [src]="icon" alt="Image">
+            </div>
+            <ng-template #matIconTemplate>
+              <mat-icon class="white">{{ icon }}</mat-icon>
+            </ng-template>
+          </div>
+        </div>
+        <h1>{{name}}</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <pre>{{content}}</pre>
+          
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-chip-set>
+        <mat-chip *ngFor="let category of categories" style="background-color: lightslategray">
+          {{category}}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-card-footer>
+</mat-card>
